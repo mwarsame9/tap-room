@@ -7,14 +7,14 @@ import { Keg } from './keg.model';
     <h1>New Keg</h1>
     <div>
      <label>Enter Keg Name:</label>
-     <input #newName>   <!--#newName is a ' template reference variable'-->
+     <input #newName><br>   <!--#newName is a ' template reference variable'-->
      <label>Enter Keg Brand:</label>
-     <input #newBrand>
+     <input #newBrand><br>
      <label>Enter Keg Price:</label>
-     <input #newPrice>
+     <input #newPrice><br>
      <label>Enter Keg ABV:</label>
-     <input #newABV>
-     <button (click)="submitForm(newName.value, newBrand.value, newPrice.value, newABV.value); newName.value=''; newBrand.value=''; newPrice.value=''; newABV.value='';">Add</button>
+     <input #newABV><br>
+     <button class="btn btn-success btn-sm" (click)="submitForm(newName.value, newBrand.value, newPrice.value, newABV.value); newName.value=''; newBrand.value=''; newPrice.value=''; newABV.value='';">Add Keg</button>
     </div>
 
 

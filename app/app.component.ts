@@ -6,8 +6,15 @@ import { Keg } from './keg.model';
   selector: 'app-root',
   template: `
   <div class="container">
-    <!-- masterKegList being passed to keg-list.component.ts AS name "childKegList"-->
-    <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></keg-list>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <keg-list [childKegList]="masterKegList" (clickSender1)="editKeg($event)" (clickSender2)="showKeg($event)"></keg-list>
+      </div>
+      <div class="col-sm-6">
+        <keg-detail [childSelectedKegDetail]="selectedKegDetail" (hideButtonClickedSender)="hideKeg()"></keg-detail>
+      </div>
+    </div>
     <hr>
     <edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()" ></edit-keg>
     <new-keg (newKegSender)="addKeg($event)"></new-keg>
@@ -23,6 +30,15 @@ export class AppComponent {
                   new Keg('Budweiser Light', 'Budweiser', 125, 4)
                 ];
   selectedKeg: null;
+  selectedKegDetail: null;
+
+  showKeg(clickedKegDetail) {
+    this.selectedKegDetail = clickedKegDetail;
+  }
+
+  hideKeg() {
+    this.selectedKegDetail = null;
+  }
 
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;

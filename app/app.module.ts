@@ -7,14 +7,17 @@ import { FormsModule }  from '@angular/forms';
 import { KegListComponent }  from './keg-list.component';
 import { EditKegComponent }  from './edit-keg.component';
 import { NewKegComponent }  from './new-keg.component';
+import { KegDetailComponent }  from './keg-detail.component';
+
 
 @NgModule({
   imports: [ BrowserModule,
              FormsModule ],
-  declarations: [ AppComponent,
+  declarations: [ AppComponent,  // declarations is an array of all components that will reside in this module.
                   KegListComponent,
                   EditKegComponent,
-                  NewKegComponent, ], // declarations is an array of all components that will reside in this module.
+                  NewKegComponent,
+                  KegDetailComponent ],
   bootstrap:    [ AppComponent ] // this is the root component and will be the first to show on the index page
 })
 
