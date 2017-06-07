@@ -12,7 +12,7 @@ import { Keg } from './keg.model';
         <keg-list [childKegList]="masterKegList" (clickSender1)="editKeg($event)" (clickSender2)="showKeg($event)"></keg-list>
       </div>
       <div class="col-sm-6">
-        <keg-detail [childSelectedKegDetail]="selectedKegDetail" (hideButtonClickedSender)="hideKeg()"></keg-detail>
+        <keg-detail [childSelectedKegDetail]="selectedKegDetail" (hideButtonClickedSender)="hideKeg()" (sellPintClickedSender)="sellOnePint($event)" ></keg-detail>
       </div>
     </div>
     <hr>
@@ -49,7 +49,11 @@ export class AppComponent {
   }
 
   addKeg(newKegFromChild: Keg) {
-   this.masterKegList.push(newKegFromChild);
- }
+    this.masterKegList.push(newKegFromChild);
+  }
+
+  sellOnePint() {
+    this.selectedKegDetail.pintsLeft -= 1;
+  }
 
 }
