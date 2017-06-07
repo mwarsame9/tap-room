@@ -11,7 +11,8 @@ import { FormsModule }  from '@angular/forms';
 
 // decorator
 @NgModule({
-  imports: [ BrowserModule ],
+  imports: [ BrowserModule,
+          FormsModule ],
   declarations: [ AppComponent ], // declarations is an array of all components that will reside in this module.
   bootstrap:    [ AppComponent ] // this is the root component and will be the first to show on the index page
 })

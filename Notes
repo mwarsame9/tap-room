@@ -1,0 +1,17 @@
+New project setup
+
+create standard file structure
+
+index.html (std)
+package.json (std)
+app/app.component.ts (root component)
+app/app.module.ts (root module)
+app/main.ts
+systemjs.config.js (use std)
+.gitignore (std)
+gulpfile.js (std)
+tsconfig.json (std)
+
+npm install
+$ bower init
+$ bower install bootstrap --save (this saves bower dependancies so vendor.css and vendor.min.js exist)
