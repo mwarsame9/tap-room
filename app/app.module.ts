@@ -8,6 +8,7 @@ import { KegListComponent }  from './keg-list.component';
 import { EditKegComponent }  from './edit-keg.component';
 import { NewKegComponent }  from './new-keg.component';
 import { KegDetailComponent }  from './keg-detail.component';
+import { PintsPipe } from './pints.pipe';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { KegDetailComponent }  from './keg-detail.component';
                   KegListComponent,
                   EditKegComponent,
                   NewKegComponent,
-                  KegDetailComponent ],
+                  KegDetailComponent,
+                  PintsPipe],
   bootstrap:    [ AppComponent ] // this is the root component and will be the first to show on the index page
 })
 
