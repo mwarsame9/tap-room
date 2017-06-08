@@ -16,6 +16,7 @@ import { Keg } from './keg.model';
       </ul>
       <button class="btn btn-default btn-sm" (click)="hideButtonClicked()">Hide Details</button>
       <button class="btn btn-success btn-sm" (click)="sellPintClicked()">Sell Pint</button>
+      <button class="btn btn-primary btn-sm" (click)="refillKegClicked()">Refill Keg</button>
     </div>
   `
 })
@@ -25,6 +26,7 @@ export class KegDetailComponent {
   @Input() childSelectedKegDetail: Keg;
   @Output() hideButtonClickedSender = new EventEmitter();
   @Output() sellPintClickedSender = new EventEmitter();
+  @Output() refillKegClickedSender = new EventEmitter();
 
   hideButtonClicked() {
     this.hideButtonClickedSender.emit();
@@ -32,6 +34,10 @@ export class KegDetailComponent {
 
   sellPintClicked() {
     this.sellPintClickedSender.emit()
+  }
+
+  refillKegClicked() {
+    this.refillKegClickedSender.emit()
   }
 
   abvColor(keg) {

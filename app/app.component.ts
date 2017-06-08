@@ -11,7 +11,7 @@ import { Keg } from './keg.model';
 
     <div class="row">
       <div class="col-sm-6">
-        <keg-detail [childSelectedKegDetail]="selectedKegDetail" (hideButtonClickedSender)="hideKeg()" (sellPintClickedSender)="sellOnePint($event)" ></keg-detail>
+        <keg-detail [childSelectedKegDetail]="selectedKegDetail" (hideButtonClickedSender)="hideKeg()" (sellPintClickedSender)="sellOnePint($event)" (refillKegClickedSender)="refillKeg($event)"></keg-detail>
       </div>
     </div>
 
@@ -56,7 +56,14 @@ export class AppComponent {
   }
 
   sellOnePint() {
-    this.selectedKegDetail.pintsLeft -= 10;
+    if (this.selectedKegDetail.pintsLeft > 10) {
+      this.selectedKegDetail.pintsLeft -= 10;
+    } else {
+      this.selectedKegDetail.pintsLeft = 0;
+      alert("Keg is finished");
+    }
   }
 
-}
+  refillKeg() {
+    this.selectedKegDetail.pintsLeft = 124;
+  }
