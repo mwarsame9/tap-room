@@ -7,12 +7,12 @@ import { Keg } from './keg.model';
   template: `
     <div *ngIf="childSelectedKegDetail">
       <ul>
-        <li> Name: {{childSelectedKegDetail.name}} </li>
-        <li> Brand: {{childSelectedKegDetail.brand}} </li>
-        <li> Price: \${{childSelectedKegDetail.price}}\.00 </li>
-        <li> ABV: {{childSelectedKegDetail.abv}}\% </li>
-        <li> Pints left: {{childSelectedKegDetail.pintsLeft}} </li>
-        <li> Price per pint: \${{childSelectedKegDetail.pintPrice}} </li>
+        <li> <b>Name:</b>  {{childSelectedKegDetail.name}} </li>
+        <li> <b>Brand:</b>   {{childSelectedKegDetail.brand}} </li>
+        <li> <b>Keg Price:</b>   \${{childSelectedKegDetail.price}}\.00 </li>
+        <li> <b>ABV:</b>   {{childSelectedKegDetail.abv}}\% </li>
+        <li> <b>Pints left:</b>   {{childSelectedKegDetail.pintsLeft}} </li>
+        <li> <b>Price per pint:</b>   \${{childSelectedKegDetail.pintPrice}} </li>
       </ul>
       <button class="btn btn-default btn-sm" (click)="hideButtonClicked()">Hide Details</button>
       <button class="btn btn-success btn-sm" (click)="sellPintClicked()">Sell Pint</button>

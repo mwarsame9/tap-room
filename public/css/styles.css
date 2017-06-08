@@ -11,3 +11,16 @@ body {
   padding-right: 50px;
   margin-bottom: 20px;
 }
+
+
+.cheapPrice {
+  background-color: #C9CCA7;
+}
+
+.midPrice {
+  background-color: #9B9E7B;
+}
+
+.expensivePrice {
+  background-color: #86895A;
+}

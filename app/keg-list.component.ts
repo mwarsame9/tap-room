@@ -12,7 +12,7 @@ import { Keg } from './keg.model';
     </select>
 
       <ul>
-        <li *ngFor="let currentKeg of childKegList | pints:filterByCompleteness"> {{currentKeg.name}}
+        <li *ngFor="let currentKeg of childKegList | pints:filterByCompleteness" [class]="priceColor(currentKeg)"> {{currentKeg.name}}
           <button class="btn btn-info btn-sm" (click)="editButtonHasBeenClicked(currentKeg)">Edit Keg</button>
           <button class="btn btn-default btn-sm" (click)="showDetailButtonHasBeenClicked(currentKeg)">Details</button>
         </li>
@@ -31,12 +31,21 @@ export class KegListComponent {
   onChange(optionFromMenu) {
     this.filterByCompleteness = optionFromMenu;
   }
-
   editButtonHasBeenClicked(kegToEdit: Keg) {
     this.clickSender1.emit(kegToEdit);
   }
   showDetailButtonHasBeenClicked(kegToShow: Keg) {
     this.clickSender2.emit(kegToShow);
+  }
+  priceColor(keg) {
+    var price: number = parseInt(keg.pintPrice);
+    if (price < 4) {
+      return "cheapPrice";
+    } else if ( (price >= 4) && (price < 5) ) {
+      return  "midPrice";
+    } else {
+      return  "expensivePrice";
+    }
   }
 
 }
