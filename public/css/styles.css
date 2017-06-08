@@ -34,3 +34,12 @@ body {
 .abvHigh {
   color: red;
 }
+
+ul {
+  list-style: none;
+}
+
+#col {
+  height: 200px;
+  text-align: center;
+}

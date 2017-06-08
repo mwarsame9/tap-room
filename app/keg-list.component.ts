@@ -11,12 +11,21 @@ import { Keg } from './keg.model';
       <option value="fullKegs">Mostly full Kegs</option>
     </select>
 
-      <ul>
-        <li *ngFor="let currentKeg of childKegList | pints:filterByCompleteness" [class]="priceColor(currentKeg)"> {{currentKeg.name}}
-          <button class="btn btn-info btn-sm" (click)="editButtonHasBeenClicked(currentKeg)">Edit Keg</button>
-          <button class="btn btn-default btn-sm" (click)="showDetailButtonHasBeenClicked(currentKeg)">Details</button>
-        </li>
-      </ul>
+    <br>
+    <br>
+
+    <div class="row">
+      <div  *ngFor="let currentKeg of childKegList | pints:filterByCompleteness"  >
+        <div class="col-sm-2" >
+          <div id="col" [class]='priceColor(currentKeg)'>
+            {{currentKeg.name}}
+            <br>
+            <button class="btn btn-info btn-sm" (click)="editButtonHasBeenClicked(currentKeg)">Edit Keg</button>
+            <button class="btn btn-default btn-sm" (click)="showDetailButtonHasBeenClicked(currentKeg)">Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
   `
 })
 
@@ -27,6 +36,7 @@ export class KegListComponent {
   @Output() clickSender2 = new EventEmitter();
 
   filterByCompleteness: string = "allKegs";
+  colClass: string = "col-sm-2";
 
   onChange(optionFromMenu) {
     this.filterByCompleteness = optionFromMenu;
@@ -38,6 +48,7 @@ export class KegListComponent {
     this.clickSender2.emit(kegToShow);
   }
   priceColor(keg) {
+    keg.pintPrice = ((keg.price / 124) * 4.5).toFixed(2);
     var price: number = parseInt(keg.pintPrice);
     if (price < 4) {
       return "cheapPrice";

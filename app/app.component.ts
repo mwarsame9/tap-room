@@ -7,14 +7,14 @@ import { Keg } from './keg.model';
   template: `
   <div class="container">
 
+      <keg-list [childKegList]="masterKegList" (clickSender1)="editKeg($event)" (clickSender2)="showKeg($event)"></keg-list>
+
     <div class="row">
-      <div class="col-sm-6">
-        <keg-list [childKegList]="masterKegList" (clickSender1)="editKeg($event)" (clickSender2)="showKeg($event)"></keg-list>
-      </div>
       <div class="col-sm-6">
         <keg-detail [childSelectedKegDetail]="selectedKegDetail" (hideButtonClickedSender)="hideKeg()" (sellPintClickedSender)="sellOnePint($event)" ></keg-detail>
       </div>
     </div>
+
     <hr>
     <edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()" ></edit-keg>
     <new-keg (newKegSender)="addKeg($event)"></new-keg>
