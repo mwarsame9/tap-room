@@ -30,7 +30,7 @@ export class AppComponent {
                   new Keg('Budweiser Light', 'Budweiser', 125, 4)
                 ];
   selectedKeg: null;
-  selectedKegDetail: null;
+  selectedKegDetail: Keg;
 
   showKeg(clickedKegDetail) {
     this.selectedKegDetail = clickedKegDetail;
@@ -53,7 +53,7 @@ export class AppComponent {
   }
 
   sellOnePint() {
-    this.selectedKegDetail.pintsLeft -= 1;
+    this.selectedKegDetail.pintsLeft -= 10;
   }
 
 }

@@ -19,7 +19,7 @@ import { PintsPipe } from './pints.pipe';
                   EditKegComponent,
                   NewKegComponent,
                   KegDetailComponent,
-                  PintsPipe],
+                  PintsPipe ],
   bootstrap:    [ AppComponent ] // this is the root component and will be the first to show on the index page
 })
 
