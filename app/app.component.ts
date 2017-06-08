@@ -25,11 +25,12 @@ import { Keg } from './keg.model';
 
 
 export class AppComponent {
-  masterKegList: Keg[] = [ new Keg('Mirror Pond Pale Ale', 'Deschutes Brewery', 105, 4.5),
-                  new Keg('Blue Dot IPA', 'Hair of the Dog', 110, 7),
+  masterKegList: Keg[] = [ new Keg('Mirror Pond Pale Ale', 'Deschutes Brewery', 98, 4.5),
+                  new Keg('Blue Dot IPA', 'Hair of the Dog', 112, 7),
                   new Keg('Budweiser Light', 'Budweiser', 125, 4)
                 ];
   selectedKeg: null;
+  // used to be "selectedKegDetail: null;" but this caused build errors
   selectedKegDetail: Keg;
 
   showKeg(clickedKegDetail) {

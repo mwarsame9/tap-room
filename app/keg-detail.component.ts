@@ -9,9 +9,10 @@ import { Keg } from './keg.model';
       <ul>
         <li> Name: {{childSelectedKegDetail.name}} </li>
         <li> Brand: {{childSelectedKegDetail.brand}} </li>
-        <li> Price: {{childSelectedKegDetail.price}} </li>
-        <li> ABV: {{childSelectedKegDetail.abv}} </li>
+        <li> Price: \${{childSelectedKegDetail.price}}\.00 </li>
+        <li> ABV: {{childSelectedKegDetail.abv}}\% </li>
         <li> Pints left: {{childSelectedKegDetail.pintsLeft}} </li>
+        <li> Price per pint: \${{childSelectedKegDetail.pintPrice}} </li>
       </ul>
       <button class="btn btn-default btn-sm" (click)="hideButtonClicked()">Hide Details</button>
       <button class="btn btn-success btn-sm" (click)="sellPintClicked()">Sell Pint</button>
