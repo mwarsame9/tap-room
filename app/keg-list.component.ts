@@ -20,8 +20,13 @@ import { Keg } from './keg.model';
           <div id="col" [class]='priceColor(currentKeg)'>
             {{currentKeg.name}}
             <br>
-            <button class="btn btn-info btn-sm" (click)="editButtonHasBeenClicked(currentKeg)">Edit Keg</button>
-            <button class="btn btn-default btn-sm" (click)="showDetailButtonHasBeenClicked(currentKeg)">Details</button>
+            <div>
+              <img id="logo" [src]="currentKeg.logoUrl" alt="Brand Logo" />
+            </div>
+            <div id="kegButtons">
+              <button class="btn btn-info btn-sm" (click)="editButtonHasBeenClicked(currentKeg)">Edit Keg</button>
+              <button class="btn btn-default btn-sm" (click)="showDetailButtonHasBeenClicked(currentKeg)">Details</button>
+            </div>
           </div>
         </div>
       </div>
@@ -48,6 +53,7 @@ export class KegListComponent {
     this.clickSender2.emit(kegToShow);
   }
   priceColor(keg) {
+    // update pintPrice before changing color
     keg.pintPrice = ((keg.price / 124) * 4.5).toFixed(2);
     var price: number = parseInt(keg.pintPrice);
     if (price < 4) {

@@ -1,3 +1,12 @@
+/* mirror pond http://thefullpint.com/wp-content/uploads/2008/07/deschutes.jpg */
+/* http://www.boozingear.com/media/catalog/product/cache/7/image/650x/040ec09b1e35df139433887a97daa66f/b/u/bud-0178b.jpg */
+/* */
+/* */
+/* */
+/* */
+/* http://www.rockymountainbarrelcompany.com/wp-content/uploads/2015/12/Bourbon_Barrel_Web-1.png */
+
+
 body {
   /*background-color: lightgrey;*/
 }
@@ -42,4 +51,13 @@ ul {
 #col {
   height: 200px;
   text-align: center;
+}
+
+#logo {
+  height: 120px;
+}
+
+
+#kegButtons {
+  margin-top: 25px;
 }

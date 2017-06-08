@@ -25,11 +25,11 @@ import { Keg } from './keg.model';
 
 
 export class AppComponent {
-  masterKegList: Keg[] = [ new Keg('Mirror Pond Pale Ale', 'Deschutes Brewery', 98, 4.5),
-                  new Keg('Blue Dot IPA', 'Hair of the Dog', 112, 7),
-                  new Keg('Budweiser Light', 'Budweiser', 125, 4),
-                  new Keg('Pabst Blue Ribbon', 'Pabst', 110, 3.5),
-                  new Keg('Apocalypse IPA', '10 Barrel', 189, 6.8)
+  masterKegList: Keg[] = [ new Keg('Mirror Pond Pale Ale', 'Deschutes Brewery', 98, 4.5, "http://thefullpint.com/wp-content/uploads/2008/07/deschutes.jpg"),
+                  new Keg('Blue Dot IPA', 'Hair of the Dog', 112, 7, "http://www.bringonthebeer.com/images/hair_of_the_dog_brewing_blue_dot_full.jpg"),
+                  new Keg('Budweiser Light', 'Budweiser', 125, 4, "http://www.boozingear.com/media/catalog/product/cache/7/image/650x/040ec09b1e35df139433887a97daa66f/b/u/bud-0178b.jpg"),
+                  new Keg('Pabst Blue Ribbon', 'Pabst', 110, 3.5, "https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Pabst_Blue_Ribbon_logo.svg/911px-Pabst_Blue_Ribbon_logo.svg.png"),
+                  new Keg('Apocalypse IPA', '10 Barrel', 189, 6.8, "https://cdn.beeradvocate.com/im/beers/53808.jpg"),
                 ];
   selectedKeg: null;
   // used to be "selectedKegDetail: null;" but this caused build errors
