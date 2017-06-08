@@ -24,3 +24,13 @@ body {
 .expensivePrice {
   background-color: #86895A;
 }
+
+.abvLow {
+  color: green;
+}
+.abvMid {
+  color: orange;
+}
+.abvHigh {
+  color: red;
+}

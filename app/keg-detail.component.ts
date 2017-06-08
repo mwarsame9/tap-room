@@ -10,7 +10,7 @@ import { Keg } from './keg.model';
         <li> <b>Name:</b>  {{childSelectedKegDetail.name}} </li>
         <li> <b>Brand:</b>   {{childSelectedKegDetail.brand}} </li>
         <li> <b>Keg Price:</b>   \${{childSelectedKegDetail.price}}\.00 </li>
-        <li> <b>ABV:</b>   {{childSelectedKegDetail.abv}}\% </li>
+        <li> <span [class]="abvColor(childSelectedKegDetail)"><b>ABV:</b></span>   {{childSelectedKegDetail.abv}}\% </li>
         <li> <b>Pints left:</b>   {{childSelectedKegDetail.pintsLeft}} </li>
         <li> <b>Price per pint:</b>   \${{childSelectedKegDetail.pintPrice}} </li>
       </ul>
@@ -32,6 +32,16 @@ export class KegDetailComponent {
 
   sellPintClicked() {
     this.sellPintClickedSender.emit()
+  }
+
+  abvColor(keg) {
+    if ( keg.abv < 4 ) {
+      return "abvLow";
+    } else if (( keg.abv >= 4 ) && ( keg.abv < 5 )) {
+      return  "abvMid";
+    } else {
+      return  "abvHigh";
+    }
   }
 
 }
